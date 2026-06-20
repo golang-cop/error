@@ -7,7 +7,7 @@ import (
 	"github.com/onsi/gomega"
 )
 
-var _ = ginkgo.Describe("MethodNotImplementedError", func() {
+var _ = ginkgo.Describe("NullError", func() {
 	var error NullError.Interface
 	var kindValue = `NullError.Interface`
 	//var methodName = ``
@@ -28,6 +28,6 @@ var _ = ginkgo.Describe("MethodNotImplementedError", func() {
 	ginkgo.It(`method IsNull() return true as this is a NullError.Interface`, func() {
 		gomega.Expect(
 			error.IsNull(),
-		).To(gomega.BeFalseBecause(`this is not a NullError.interface`))
+		).To(gomega.BeTrueBecause(`this is a NullError.Interface`))
 	})
 })
