@@ -1,6 +1,13 @@
 package Error
 
+import (
+	Object "github.com/golang-oop/error/src/object"
+	//Result "github.com/golang-oop/result/src"
+	//String "github.com/golang-oop/string/src"
+)
+
 type Interface interface {
+	Object.Interface
 	Message() string
 	IsNull() bool
 }
@@ -15,6 +22,15 @@ func New(message string) Interface {
 	}
 }
 
+func (d data) Kind() string {
+	return Object.Kind(d)
+}
+func (d data) RespondTo(methodName string) bool {
+	return Object.RespondTo(d, methodName)
+}
+func (d data) Methods() []string {
+	return Object.Methods(d)
+}
 func (d data) Message() string {
 	return d.message
 }

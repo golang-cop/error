@@ -1,28 +1,33 @@
-package Error
+package Error_test
 
-import "testing"
+import (
+	Error "github.com/golang-oop/error/src"
 
-func TestNewMessage(t *testing.T) {
-	const want = "boom"
-	e := New(want)
-	if got := e.Message(); got != want {
-		t.Fatalf("Message() = %q, want %q", got, want)
-	}
-}
+	"github.com/onsi/ginkgo/v2"
+	"github.com/onsi/gomega"
+)
 
-func TestNewIsNull(t *testing.T) {
-	e := New("anything")
-	if e.IsNull() {
-		t.Fatal("IsNull() = true, want false for a real error")
-	}
-}
-
-func TestEmptyMessage(t *testing.T) {
-	e := New("")
-	if got := e.Message(); got != "" {
-		t.Fatalf("Message() = %q, want empty string", got)
-	}
-	if e.IsNull() {
-		t.Fatal("IsNull() = true, want false even for empty message")
-	}
-}
+var _ = ginkgo.Describe("Error", func() {
+	/*
+		ginkgo.It("constructor New(string) can create a new Error from Go native string", func() {
+			gomega.Expect(
+				Error.New(`something gone wrong`),
+			).To()
+		})
+	*/
+	ginkgo.It("method Kind() can return the Interface kind", func() {
+		gomega.Expect(
+			Error.New(`something gone wrong`).Kind(),
+		).To(gomega.BeIdenticalTo(`Error.Interface`))
+	})
+	ginkgo.It("method Message() can return the associated message", func() {
+		gomega.Expect(
+			Error.New(`something gone wrong`).Message(),
+		).To(gomega.BeIdenticalTo(`something gone wrong`))
+	})
+	ginkgo.It(`method IsNull() return false as this not a NullError.Interface`, func() {
+		gomega.Expect(
+			Error.New(`something gone wrong`).IsNull(),
+		).To(gomega.BeFalseBecause(`this is not a NullError.interface`))
+	})
+})

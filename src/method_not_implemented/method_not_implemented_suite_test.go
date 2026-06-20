@@ -1,4 +1,4 @@
-package NullError_test
+package MethodNotImplementedError_test
 
 import (
 	"testing"

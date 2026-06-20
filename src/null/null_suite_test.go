@@ -1,21 +1,19 @@
-package MethodNotImplementedError_test
+package NullError_test
 
 import (
-	"fmt"
-
-	MethodNotImplementedError "github.com/golang-oop/error/src/method_not_implemented"
+	NullError "github.com/golang-oop/error/src/null"
 
 	"github.com/onsi/ginkgo/v2"
 	"github.com/onsi/gomega"
 )
 
 var _ = ginkgo.Describe("MethodNotImplementedError", func() {
-	var error MethodNotImplementedError.Interface
-	var kindValue = `MethodNotImplementedError.Interface`
-	var methodName = `someMethod`
-	var message = fmt.Sprintf(`The method %s is not implemented`, methodName)
+	var error NullError.Interface
+	var kindValue = `NullError.Interface`
+	//var methodName = ``
+	var message = ``
 	ginkgo.BeforeEach(func() {
-		error = MethodNotImplementedError.New(methodName)
+		error = NullError.New()
 	})
 	ginkgo.It("method Kind() can return the Interface kind", func() {
 		gomega.Expect(
@@ -27,7 +25,7 @@ var _ = ginkgo.Describe("MethodNotImplementedError", func() {
 			error.Message(),
 		).To(gomega.BeIdenticalTo(message))
 	})
-	ginkgo.It(`method IsNull() return false as this is not a NullError.Interface`, func() {
+	ginkgo.It(`method IsNull() return true as this is a NullError.Interface`, func() {
 		gomega.Expect(
 			error.IsNull(),
 		).To(gomega.BeFalseBecause(`this is not a NullError.interface`))

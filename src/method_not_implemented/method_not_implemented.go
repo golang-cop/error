@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	Error "github.com/golang-oop/error/src"
+	Object "github.com/golang-oop/error/src/object"
 )
 
 type Interface interface {
@@ -24,10 +25,22 @@ func New(name string) Interface {
 	}
 }
 
+func (d data) Kind() string {
+	return Object.Kind(d)
+	//return `MethodNotImplementedError.Interface`
+}
+func (d data) RespondTo(name string) bool {
+	return Object.RespondTo(d, name)
+}
+
 func (d data) Message() string {
 	return d.message
 }
 
 func (d data) IsNull() bool {
 	return false
+}
+
+func (d data) Methods() []string {
+	return Object.Methods(d)
 }

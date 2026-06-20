@@ -1,4 +1,4 @@
-package NullError_test
+package Error_test
 
 import (
 	"testing"
