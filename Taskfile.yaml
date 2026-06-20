@@ -13,12 +13,12 @@ tasks:
   build:
     desc: build the code
     cmds:
-    - go build -o bin/boolean
-    - ./bin/boolean
+    - go build -o bin/error
+    - ./bin/error
 
   test:
     desc: run the tests suite
     cmds:
     - |
 
-      pkgx ginkgo run -v --cover ./src
+      pkgx ginkgo run -v -r --cover #./src ./src/method_not_implemented
