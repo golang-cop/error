@@ -30,4 +30,11 @@ var _ = ginkgo.Describe("Error", func() {
 			Error.New(`something gone wrong`).IsNull(),
 		).To(gomega.BeFalseBecause(`this is not a NullError.interface`))
 	})
+	ginkgo.It(`method RespondTo() reports whether the Error answers a method`, func() {
+		gomega.Expect(Error.New(`x`).RespondTo(`Message`)).To(gomega.BeTrue())
+		gomega.Expect(Error.New(`x`).RespondTo(`NoSuchMethod`)).To(gomega.BeFalse())
+	})
+	ginkgo.It(`method Methods() lists the Error's methods`, func() {
+		gomega.Expect(Error.New(`x`).Methods()).To(gomega.ContainElement(`Message`))
+	})
 })
