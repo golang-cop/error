@@ -1,7 +1,7 @@
 package NullError_test
 
 import (
-	NullError "github.com/golang-oop/error/src/null"
+	NullError "github.com/golang-cop/error/src/null"
 
 	"github.com/onsi/ginkgo/v2"
 	"github.com/onsi/gomega"

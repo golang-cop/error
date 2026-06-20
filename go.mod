@@ -1,4 +1,4 @@
-module github.com/golang-oop/error
+module github.com/golang-cop/error
 
 go 1.21.6
 

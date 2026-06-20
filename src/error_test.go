@@ -1,7 +1,7 @@
 package Error_test
 
 import (
-	Error "github.com/golang-oop/error/src"
+	Error "github.com/golang-cop/error/src"
 
 	"github.com/onsi/ginkgo/v2"
 	"github.com/onsi/gomega"

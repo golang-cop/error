@@ -1,8 +1,8 @@
 package NullError
 
 import (
-	Error "github.com/golang-oop/error/src"
-	Object "github.com/golang-oop/error/src/object"
+	Error "github.com/golang-cop/error/src"
+	Object "github.com/golang-cop/error/src/object"
 )
 
 type Interface interface {
