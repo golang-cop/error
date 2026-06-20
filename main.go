@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	Error "github.com/golang-cop/error/src"
-	MethodNotImplementedError "github.com/golang-cop/error/src/method_not_implemented"
-	NullError "github.com/golang-cop/error/src/null"
-	Object "github.com/golang-cop/error/src/object"
+	Error "github.com/go-composites/error/src"
+	MethodNotImplementedError "github.com/go-composites/error/src/method_not_implemented"
+	NullError "github.com/go-composites/error/src/null"
+	Object "github.com/go-composites/error/src/object"
 )
 
 func main() {

@@ -1,9 +1,9 @@
 package Error
 
 import (
-	Object "github.com/golang-cop/error/src/object"
-	//Result "github.com/golang-cop/result/src"
-	//String "github.com/golang-cop/string/src"
+	Object "github.com/go-composites/error/src/object"
+	//Result "github.com/go-composites/result/src"
+	//String "github.com/go-composites/string/src"
 )
 
 type Interface interface {

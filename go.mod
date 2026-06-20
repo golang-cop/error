@@ -1,4 +1,4 @@
-module github.com/golang-cop/error
+module github.com/go-composites/error
 
 go 1.21.6
 

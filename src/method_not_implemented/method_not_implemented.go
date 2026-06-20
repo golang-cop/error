@@ -3,8 +3,8 @@ package MethodNotImplementedError
 import (
 	"fmt"
 
-	Error "github.com/golang-cop/error/src"
-	Object "github.com/golang-cop/error/src/object"
+	Error "github.com/go-composites/error/src"
+	Object "github.com/go-composites/error/src/object"
 )
 
 type Interface interface {

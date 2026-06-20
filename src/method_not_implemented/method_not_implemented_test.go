@@ -3,7 +3,7 @@ package MethodNotImplementedError_test
 import (
 	"fmt"
 
-	MethodNotImplementedError "github.com/golang-cop/error/src/method_not_implemented"
+	MethodNotImplementedError "github.com/go-composites/error/src/method_not_implemented"
 
 	"github.com/onsi/ginkgo/v2"
 	"github.com/onsi/gomega"
