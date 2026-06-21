@@ -12,8 +12,13 @@ type Interface interface {
 
 type data struct{}
 
+// theNullError is the single, immutable "no error" sentinel — empty message,
+// IsNull() always true, so every NullError is interchangeable: one shared
+// instance is semantically identical to a fresh one, at zero alloc.
+var theNullError = &data{}
+
 func New() Interface {
-	return &data{}
+	return theNullError
 }
 
 func (d data) Kind() string {
